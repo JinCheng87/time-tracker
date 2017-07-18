@@ -1,0 +1,25 @@
+<h1>Edit Project: <%= project.name %></h1>
+<form method="post" action="/project/<%= project.id %>/edit">
+  <input type="hidden" name="_method" value="put">
+
+  <div class="input-field">
+    <label><%= "Project Name:" %></label>
+    <input type="text" name="name" value="<%= project.name %>">
+  </div>
+
+  <div class="input-field">
+    <label><%= "Start Date:" %></label>
+    <input type="date" name="start_date"value="<%= project.start_date %>">
+  </div>
+
+  <div class="input-field">
+    <label><%= "End Date:" %></label>
+    <input type="date" name="end_date" value="<%= project.end_date %>">
+  </div>
+
+  <div class="input-field">
+    <label><%= "Description:" %></label>
+    <input type="text" name="description" value="<%= project.description %>">
+  </div>
+  <button>Submit</button>
+</form>

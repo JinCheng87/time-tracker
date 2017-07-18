@@ -1,0 +1,37 @@
+<h1>Work Session Detail</h1>
+  <div>
+    <label >Date: </label>
+    <%= work_session.date %>
+  </div>
+
+  <div>
+    <label>Start Time: </label>
+    <%= work_session.start_time %>
+  </div>
+
+  <div>
+    <label>End Time: </label>
+    <%= work_session.end_time %>
+  </div>
+
+  <div>
+    <label>Billable?: </label>
+     <% if work_session.is_billable %> <label>Yes</label>
+    <% else %>
+    <label>No</label>
+    <% end %>
+  </div>
+
+  <div>
+    <label>Description: </label>
+    <%= work_session.description %>
+  </div>
+
+  <div>
+    <a href="/project/<%= project_id %>/work_session"><button>Back</button></a>
+    <a href="/project/<%= project_id %>/work_session/<%= work_session.id %>/edit"><button>Edit</button></a>
+    <form method="post" action="/project/<%= project_id %>/work_session/<%= work_session.id %>/delete">
+      <input type="hidden" name="_method" value="delete">
+      <button>Delete</button>
+    </form>
+  </div>

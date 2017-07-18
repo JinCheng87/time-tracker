@@ -1,0 +1,34 @@
+<h1>Create a work session</h1>
+<form method="post" action="/project/<%= project_id %>/work_session/new">
+
+  <div>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" value="<%= work_session.date %>">
+  </div>
+
+  <div>
+    <label for="start_time">Start Time</label>
+    <input type="time" name="start_time" id="start_time" value="<%= work_session.start_time %>">
+  </div>
+
+  <div>
+    <label for="end_time">End Time</label>
+    <input type="time" name="end_time" id="end_time" value="<%= work_session.end_time %>">
+  </div>
+
+  <div>
+    <label for="is_billable">Billable?</label>
+    <label>Yes</label>
+    <input type="radio" name="is_billable" id="is_billable" value="true">
+    <label>No</label>
+    <input type="radio" name="is_billable" id="is_billable" value="false">
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description"><%= work_session.description %></textarea>
+  </div>
+
+  <button>submit</button>
+
+</form>

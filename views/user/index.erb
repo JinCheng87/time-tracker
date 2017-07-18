@@ -1,0 +1,9 @@
+<h1>Welcome</h1>
+<% if current_user %>
+  <a href="/project/new"><button>Create A Project</button></a>
+  <h3>projects: </h3>
+  <% projects.each_with_index do |project, index| %>
+    <p><%= index+1 %>: <a href="/project/<%= project.id %>"><%= project.name %>
+    <%= project.start_date %></a> </p>
+  <% end %>
+<% end %>
